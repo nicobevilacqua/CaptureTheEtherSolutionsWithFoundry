@@ -6,7 +6,7 @@ import "forge-std/console2.sol";
 import "../src/IGuessTheNewNumberChallenge.sol";
 
 contract GuessTheNewNumberChallengeTest is Test {
-    address private constant TARGET_ADDRESS = 0x2B15A7419Abbd7dc512a8b75A40e26ea767Bf3A7;
+    address private constant TARGET_ADDRESS = 0x1926fC6D39912Ff030905c448A923fe7eAA1CFfe;
     IGuessTheNewNumberChallenge private target;
 
     function setUp() public {
@@ -23,6 +23,7 @@ contract GuessTheNewNumberChallengeTest is Test {
         console.log(TARGET_ADDRESS.balance);
         assertTrue(success);
         assertTrue(target.isComplete());
+        assertTrue(TARGET_ADDRESS.balance == 0);
     }
 
     receive() external payable {}
