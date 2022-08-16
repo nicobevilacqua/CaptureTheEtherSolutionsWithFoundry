@@ -7,8 +7,6 @@ import "forge-std/console2.sol";
 import "../src/INicknameChallenge.sol";
 import "../src/ICaptureTheEther.sol";
 
-// forge test --fork-url https://ropsten.infura.io/v3/$INFURA_KEY --match-test testNicknameChallenge -vvvv
-
 contract NicknameChallengeTest is Test {
     address private constant TARGET_ADDRESS = 0x045c6C194530AD9E5Bc2e87307089FbF80F04B2b;
     address private constant USER_ADDRESS = 0x23e1b1a0048988f702c1bE31b69fC52e0c253C79;
@@ -24,8 +22,6 @@ contract NicknameChallengeTest is Test {
     }
 
     function testNicknameChallenge() public {
-        console.log("asd");
-        console.log(msg.sender);
         bytes32 nickname = bytes32(bytes("PeronPeronFoundry"));
         capture.setNickname(nickname);
         assertTrue(target.isComplete());
